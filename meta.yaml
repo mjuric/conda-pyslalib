@@ -13,9 +13,12 @@ source:
 
 requirements:
     build:
+        - {{ compiler('fortran') }}
+    host:
         - numpy
-        - python {{ python }}
+        - python
     run:
+        - numpy
         - python
 
 test:
