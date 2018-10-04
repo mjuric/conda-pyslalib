@@ -26,5 +26,10 @@ steps:
     echo Running the build
     export
     mkdir "$HOME/conda-bld"
-    CONDA_BLD_PATH="$HOME/conda-bld" conda build .
+    echo "conda-build:" > ~/.condarc
+    echo "  root-dir: ~/conda-bld" >> ~/.condarc
+    echo "====== ~/.condarc:"
+    cat ~/.condarc
+    echo "======"
+    conda build .
   displayName: 'Build'
