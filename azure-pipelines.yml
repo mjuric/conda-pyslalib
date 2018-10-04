@@ -19,6 +19,9 @@ steps:
     #createOptions: # Optional
     #cleanEnvironment: # Optional
 
+- script: conda install conda-build
+  displayName: 'Install conda-build'
+
 - script: echo "Hello, world! My path is PATH=$PATH"
   displayName: 'Run a one-line script'
 
