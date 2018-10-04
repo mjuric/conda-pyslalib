@@ -11,16 +11,16 @@ steps:
 # Create and activate a Conda environment.
 - task: CondaEnvironment@1
   inputs:
-    createCustomEnvironment: False
-    #environmentName: # Required when createCustomEnvironment == True
-    #packageSpecs: 'python=3' # Optional
-    #updateConda: # Optional
+    createCustomEnvironment: True
+    environmentName: build
+    packageSpecs: 'python=3 conda-build'
+    updateConda: False
     #installOptions: # Optional
     #createOptions: # Optional
     #cleanEnvironment: # Optional
 
-- script: conda install --yes conda-build
-  displayName: 'Install conda-build'
+#- script: conda install --yes conda-build
+#  displayName: 'Install conda-build'
 
 - script: |
     echo Running the build
