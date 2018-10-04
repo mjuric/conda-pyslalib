@@ -19,7 +19,7 @@ steps:
     #createOptions: # Optional
     #cleanEnvironment: # Optional
 
-- script: conda -y install conda-build
+- script: conda install --yes conda-build
   displayName: 'Install conda-build'
 
 - script: |
