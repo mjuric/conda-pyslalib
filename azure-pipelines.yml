@@ -6,6 +6,7 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+steps:
 # Conda Environment
 # Create and activate a Conda environment.
 - task: CondaEnvironment@1
@@ -18,7 +19,6 @@ pool:
     #createOptions: # Optional
     #cleanEnvironment: # Optional
 
-steps:
 - script: echo "Hello, world! My path is PATH=$PATH"
   displayName: 'Run a one-line script'
 
