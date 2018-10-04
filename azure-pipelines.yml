@@ -24,6 +24,7 @@ steps:
 
 - script: |
     echo Running the build
-    echo PATH=$PATH
-    conda build .
+    export
+    mkdir "$HOME/conda-bld"
+    CONDA_BLD_PATH="$HOME/conda-bld" conda build .
   displayName: 'Build'
