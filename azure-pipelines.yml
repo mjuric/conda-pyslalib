@@ -6,11 +6,24 @@
 pool:
   vmImage: 'Ubuntu 16.04'
 
+# Conda Environment
+# Create and activate a Conda environment.
+- task: CondaEnvironment@1
+  inputs:
+    createCustomEnvironment: False
+    #environmentName: # Required when createCustomEnvironment == True
+    #packageSpecs: 'python=3' # Optional
+    #updateConda: # Optional
+    #installOptions: # Optional
+    #createOptions: # Optional
+    #cleanEnvironment: # Optional
+
 steps:
-- script: echo Hello, world!
+- script: echo "Hello, world! My path is PATH=$PATH"
   displayName: 'Run a one-line script'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
+    echo PATH=$PATH
   displayName: 'Run a multi-line script'
