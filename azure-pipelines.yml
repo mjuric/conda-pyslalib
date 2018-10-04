@@ -19,14 +19,11 @@ steps:
     #createOptions: # Optional
     #cleanEnvironment: # Optional
 
-- script: conda install conda-build
+- script: conda -y install conda-build
   displayName: 'Install conda-build'
 
-- script: echo "Hello, world! My path is PATH=$PATH"
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
+    echo Running the build
     echo PATH=$PATH
-  displayName: 'Run a multi-line script'
+    conda build .
+  displayName: 'Build'
