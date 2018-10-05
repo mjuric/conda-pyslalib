@@ -1,7 +1,18 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+#
+# Parallel build
+#
+jobs:
+- job: CI
+  strategy:
+    matrix:
+      py27:
+        conda.py: 2.7
+      py35:
+        conda.py: 3.5
+      py36:
+        conda.py: 3.6
+      py36:
+        conda.py: 3.7
 
 pool:
   vmImage: 'Ubuntu 16.04'
@@ -14,5 +25,8 @@ steps:
 
 - script: |
     sudo conda install --yes conda-build
+    echo ================================
+    env
+    echo ================================
     conda build .
   displayName: 'Build'
