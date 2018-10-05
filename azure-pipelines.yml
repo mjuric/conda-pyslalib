@@ -2,28 +2,11 @@
 # Parallel build
 #
 jobs:
-- job: Linux
-  pool:
+- template: azure-tpl-jobs.yml
+  parameters:
+    name: Linux
     vmImage: 'Ubuntu 16.04'
-  strategy: &strt
-    matrix:
-      py27:
-        conda.py: 2.7
-      py35:
-        conda.py: 3.5
-      py36:
-        conda.py: 3.6
-      py37:
-        conda.py: 3.7
-  steps: &stp
-  - script: |
-      export PATH="$CONDA/bin:$PATH"
-      sudo conda install --yes conda-build
-      conda build .
-    displayName: 'Build'
-
-- job: MacOS
-  pool:
+- template: azure-tpl-jobs.yml
+  parameters:
+    name: MacOS
     vmImage: 'macOS-10.13'
-  strategy: *strt
-  steps: *stp
