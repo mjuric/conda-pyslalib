@@ -3,6 +3,8 @@
 #
 jobs:
 - job: CI
+  pool:
+    vmImage: 'Ubuntu 16.04'
   strategy:
     matrix:
       py27:
@@ -11,22 +13,17 @@ jobs:
         conda.py: 3.5
       py36:
         conda.py: 3.6
-      py36:
+      py37:
         conda.py: 3.7
-
-pool:
-  vmImage: 'Ubuntu 16.04'
-
-steps:
-- task: CondaEnvironment@1
-  inputs:
-    createCustomEnvironment: False
-    updateConda: False
-
-- script: |
-    sudo conda install --yes conda-build
-    echo ================================
-    env
-    echo ================================
-    conda build .
-  displayName: 'Build'
+  steps:
+  - task: CondaEnvironment@1
+    inputs:
+      createCustomEnvironment: False
+      updateConda: False
+  - script: |
+      sudo conda install --yes conda-build
+      echo ================================
+      env
+      echo ================================
+      conda build .
+    displayName: 'Build'
