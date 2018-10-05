@@ -21,6 +21,7 @@ jobs:
 #      createCustomEnvironment: False
 #      updateConda: False
   - script: |
+      export PATH="$CONDA/bin:$PATH"
       export
       sudo conda install --yes conda-build
       conda build .
@@ -45,6 +46,7 @@ jobs:
 #      createCustomEnvironment: False
 #      updateConda: False
   - script: |
+      export PATH="$CONDA/bin:$PATH"
       export
       sudo conda install --yes conda-build
       conda build .
