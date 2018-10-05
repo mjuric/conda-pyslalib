@@ -11,7 +11,7 @@ steps:
 # Create and activate a Conda environment.
 - task: CondaEnvironment@1
   inputs:
-    #createCustomEnvironment: True
+    createCustomEnvironment: False
     #environmentName: build
     #packageSpecs: 'python=3 conda-build'
     #updateConda: False
