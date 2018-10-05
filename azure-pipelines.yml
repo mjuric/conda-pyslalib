@@ -2,7 +2,7 @@
 # Parallel build
 #
 jobs:
-- job: Linux CI
+- job: Linux
   pool:
     vmImage: 'Ubuntu 16.04'
   strategy:
@@ -25,7 +25,7 @@ jobs:
       conda build .
     displayName: 'Build'
 
-- job: MacOS CI
+- job: MacOS
   pool:
     vmImage: 'macOS-10.13'
   strategy:
