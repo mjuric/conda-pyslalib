@@ -8,7 +8,7 @@ jobs:
 - job: ${{ parameters.name }}
   pool:
     vmImage: ${{ parameters.vmImage }}
-  strategy: &strt
+  strategy:
     matrix:
       py27:
         conda.py: 2.7
@@ -18,7 +18,7 @@ jobs:
         conda.py: 3.6
       py37:
         conda.py: 3.7
-  steps: &stp
+  steps:
   - script: |
       export PATH="$CONDA/bin:$PATH"
       sudo conda install --yes conda-build
