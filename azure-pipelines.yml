@@ -16,11 +16,12 @@ jobs:
       py37:
         conda.py: 3.7
   steps:
-  - task: CondaEnvironment@1
-    inputs:
-      createCustomEnvironment: False
-      updateConda: False
+#  - task: CondaEnvironment@1
+#    inputs:
+#      createCustomEnvironment: False
+#      updateConda: False
   - script: |
+      export
       sudo conda install --yes conda-build
       conda build .
     displayName: 'Build'
@@ -39,11 +40,12 @@ jobs:
       py37:
         conda.py: 3.7
   steps:
-  - task: CondaEnvironment@1
-    inputs:
-      createCustomEnvironment: False
-      updateConda: False
+#  - task: CondaEnvironment@1
+#    inputs:
+#      createCustomEnvironment: False
+#      updateConda: False
   - script: |
+      export
       sudo conda install --yes conda-build
       conda build .
     displayName: 'Build'
